@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Hello，Rainyday</title>
+    <style>
+        body{
+            verflow: hidden;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script src="rainyday.min.js"></script>
+    <script>
+        function run() {
+                var image = document.getElementById('wrapper');
+                image.onload = function () {
+                    var engine = new RainyDay({
+                        image: this
+                    });
+                    engine.rain([
+                         [3, 2, 2]
+                    ], 100);
+                };
+                image.crossOrigin = 'anonymous';
+                image.src = 'Halifax_Sunset_by_Vlad_Drobinin.jpg';
+            }
+    </script>
+</head>
+<body onload="run();">
+    <img src ="" alt=""id="wrapper">
+</body>
+</html>
